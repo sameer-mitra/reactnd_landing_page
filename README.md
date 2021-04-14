@@ -1,4 +1,4 @@
-# reactnd_landing_page
+# Landing Page
 Project 2 of 5, Udacity Frontend Web Develeopment NanoDegree
 
 # Interface and Architecture
