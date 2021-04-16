@@ -28,7 +28,7 @@ h1 {
 
 @media only screen and (min-width: 35em){
     h1 {
-        font-size: 7em;
+        font-size: 5em;
         margin: 2em 4rem 1em;
     }
 }
@@ -67,24 +67,38 @@ section {
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar__menu a {
+    padding: 1.25rem 0.5rem;
+    font-size: 1rem;
+    max-width: 140px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    color: #333;
 }
 
 .navbar__menu li {
     display: inline-block;
 }
 
-.navbar__menu .menu__link {
+.navbar__menu .nav-link {
     display: block;
     padding: 1em;
     font-weight: bold;
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
+.navbar__menu .nav-link:hover {
+    color: #e66114;
     transition: ease 0.3s all;
 }
 
@@ -192,18 +206,18 @@ section:nth-of-type(3n + 1) .landing__container::after {
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
-/* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+/* Note: active-section class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+section.active-section {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
+section.active-section .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active-section .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
