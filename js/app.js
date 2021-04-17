@@ -18,9 +18,11 @@
  * 
 */
 const navbar = document.getElementById('navbar__list');
+const header = document.querySelector('header');
 const sections = document.querySelectorAll('section');
 const navItems = [];
 let navbarHeight = 0;
+const backToTopBtn = document.querySelector('#back-to-top');
 
 
 /**
@@ -29,6 +31,35 @@ let navbarHeight = 0;
  * 
 */
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    let scrollPosition = window.scrollY;
+    const headerHeight = header.offsetHeight;
+  if (scrollPosition > headerHeight) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+
+    // Also set the section to active while scrolling.
+    //let bActiveSet = false;
+    //resetActiveState();
+
+    //navItems.forEach(({elementSection, elementNavLink, elementNavItem}) => {
+    //    if (!bActiveSet && elementSection.top >= scrollPosition) {            
+    //        elementSection.classList.add('active-section');
+    //        elementNavItem.classList.add('active-nav');
+    //        bActiveSet = true;
+    //    }
+    //});
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 
 /**
