@@ -51,7 +51,8 @@ function buildNav() {
         navbar.appendChild(navItem);
 
         const navItemTemp = {
-            elementNav: navLink,
+            elementNavLink: navLink,
+            elementNavItem: navItem,
             elementSection: section
           };
       
@@ -68,13 +69,23 @@ buildNav();
 // Scroll to anchor ID using scrollTO event
 navbar.addEventListener('click', (event) => {
     event.preventDefault();
+    resetActiveState();
 
-    navItems.forEach(({elementSection, elementNav}) => {
-        if (elementNav === event.target) {
-        elementSection.scrollIntoView({behavior: 'smooth'});
+    navItems.forEach(({elementSection, elementNavLink, elementNavItem}) => {
+        if (elementNavLink === event.target) {
+            elementSection.scrollIntoView({behavior: 'smooth'});
+            elementSection.classList.add('active-section');
+            elementNavItem.classList.add('active-nav');
         }
     });
 });
+
+function resetActiveState(){
+    navItems.forEach(({elementSection, elementNavLink, elementNavItem}) => {        
+        elementSection.classList.remove('active-section'); 
+        elementNavItem.classList.remove('active-nav');      
+    });
+}
 
 /**
  * End Main Functions
