@@ -1,6 +1,9 @@
 # Landing Page
 Project 2 of 5, Udacity Frontend Web Develeopment NanoDegree
 
+# Live Demo
+https://sameer-mitra-landingpage.netlify.app/
+
 # Interface and Architecture
 ## Architecture
 
